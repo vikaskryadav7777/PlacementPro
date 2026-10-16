@@ -426,52 +426,74 @@ MAIN APP
                 <div class="page-title">
                     <div>
                         <h1>Aptitude Practice 🧮</h1>
-                        <p>Improve your quantitative, logical and verbal skills.</p>
+                        <p>Improve your quantitative, logical and verbal skills with placement questions.</p>
                     </div>
                 </div>
 
-                <div class="module-grid">
+                <div class="filter-tabs" id="aptitudeFilterTabs">
+                    <button class="filter-tab active" onclick="filterAptitude('all', this)">All Modules</button>
+                    <button class="filter-tab" onclick="filterAptitude('quant', this)">Quantitative</button>
+                    <button class="filter-tab" onclick="filterAptitude('logical', this)">Logical Reasoning</button>
+                    <button class="filter-tab" onclick="filterAptitude('verbal', this)">Verbal Ability</button>
+                    <button class="filter-tab" onclick="filterAptitude('company', this)">Company Special (TCS/Infy/AMCAT)</button>
+                </div>
 
-                    <div class="module-card"
+                <div class="module-grid" id="aptitudeModuleGrid">
+
+                    <div class="module-card" data-category="quant"
                          onclick="startQuiz('aptitude')">
                         <div class="module-icon">%</div>
                         <h3>Quantitative Aptitude</h3>
                         <p>
-                            Percentage, profit & loss, ratio,
-                            average, time & work and probability.
+                            Percentages, profit & loss, speed & distance, time & work,
+                            ratios, averages, permutation & probability.
                         </p>
                         <div class="progress">
                             <span style="width:72%"></span>
                         </div>
-                        <small>72% completed</small>
+                        <small>25+ Questions • High Weightage</small>
                     </div>
 
-                    <div class="module-card"
+                    <div class="module-card" data-category="logical"
                          onclick="startQuiz('reasoning')">
                         <div class="module-icon">🧩</div>
                         <h3>Logical Reasoning</h3>
                         <p>
-                            Series, coding-decoding, blood relations,
-                            syllogism and directions.
+                            Number & letter series, coding-decoding, blood relations,
+                            syllogisms, directions and seating arrangements.
                         </p>
                         <div class="progress">
                             <span style="width:58%"></span>
                         </div>
-                        <small>58% completed</small>
+                        <small>20+ Questions • Analytical Logic</small>
                     </div>
 
-                    <div class="module-card"
+                    <div class="module-card" data-category="verbal"
                          onclick="startQuiz('verbal')">
                         <div class="module-icon">A</div>
                         <h3>Verbal Ability</h3>
                         <p>
-                            Grammar, vocabulary, synonyms,
-                            antonyms and comprehension.
+                            Grammar rules, sentence correction, synonyms, antonyms,
+                            idioms, phrases and reading comprehension.
                         </p>
                         <div class="progress">
                             <span style="width:64%"></span>
                         </div>
-                        <small>64% completed</small>
+                        <small>20+ Questions • English Fluency</small>
+                    </div>
+
+                    <div class="module-card" data-category="company"
+                         onclick="startQuiz('company_aptitude')">
+                        <div class="module-icon">🏢</div>
+                        <h3>Company Aptitude Special</h3>
+                        <p>
+                            Real exam questions from TCS NQT, Infosys Cryptarithmetic,
+                            Accenture Cognitive, AMCAT and eLitmus.
+                        </p>
+                        <div class="progress">
+                            <span style="width:80%"></span>
+                        </div>
+                        <small>20+ Questions • Recruiter Patterns</small>
                     </div>
 
                 </div>
@@ -491,101 +513,135 @@ MAIN APP
                 <div class="page-title">
                     <div>
                         <h1>Technical MCQs 🧠</h1>
-                        <p>Master core computer science subjects.</p>
+                        <p>Master core computer science subjects, programming and pseudocode.</p>
                     </div>
                 </div>
 
-                <div class="module-grid">
+                <div class="filter-tabs" id="technicalFilterTabs">
+                    <button class="filter-tab active" onclick="filterTechnical('all', this)">All Subjects</button>
+                    <button class="filter-tab" onclick="filterTechnical('prog', this)">Programming (C/Java/Python)</button>
+                    <button class="filter-tab" onclick="filterTechnical('core', this)">Core CS (DBMS/OS/CN)</button>
+                    <button class="filter-tab" onclick="filterTechnical('algo', this)">DSA & OOP</button>
+                    <button class="filter-tab" onclick="filterTechnical('pseudo', this)">Pseudocode & Logic</button>
+                    <button class="filter-tab" onclick="filterTechnical('company', this)">Company Tech Papers</button>
+                </div>
 
-                    <div class="module-card"
-                         onclick="startQuiz('technical')">
+                <div class="module-grid" id="technicalModuleGrid">
+
+                    <div class="module-card" data-category="prog"
+                         onclick="startQuiz('c_cpp')">
                         <div class="module-icon">C</div>
                         <h3>C / C++</h3>
-                        <p>Programming fundamentals, pointers, OOP and STL.</p>
+                        <p>Pointers, dynamic memory, preprocessors, structures, OOP & STL.</p>
                         <div class="progress">
                             <span style="width:78%"></span>
                         </div>
-                        <small>78% completed</small>
+                        <small>18+ Questions • C/C++ Fundamentals</small>
                     </div>
 
-                    <div class="module-card"
-                         onclick="startQuiz('technical')">
+                    <div class="module-card" data-category="prog"
+                         onclick="startQuiz('java')">
                         <div class="module-icon">☕</div>
                         <h3>Java</h3>
-                        <p>OOP, collections, exceptions, streams and JVM.</p>
+                        <p>Collections, OOP, exceptions, streams, JVM memory & threading.</p>
                         <div class="progress">
                             <span style="width:70%"></span>
                         </div>
-                        <small>70% completed</small>
+                        <small>18+ Questions • Core & Advanced Java</small>
                     </div>
 
-                    <div class="module-card"
-                         onclick="startQuiz('technical')">
+                    <div class="module-card" data-category="prog"
+                         onclick="startQuiz('python')">
                         <div class="module-icon">🐍</div>
                         <h3>Python</h3>
-                        <p>Syntax, data structures, functions and OOP.</p>
+                        <p>Data structures, decorators, generators, lambda, slicing & OOP.</p>
                         <div class="progress">
                             <span style="width:65%"></span>
                         </div>
-                        <small>65% completed</small>
+                        <small>15+ Questions • Pythonic Concepts</small>
                     </div>
 
-                    <div class="module-card"
-                         onclick="startQuiz('technical')">
+                    <div class="module-card" data-category="core"
+                         onclick="startQuiz('dbms')">
                         <div class="module-icon">DB</div>
-                        <h3>DBMS</h3>
-                        <p>SQL, normalization, transactions and indexing.</p>
+                        <h3>DBMS & SQL</h3>
+                        <p>SQL joins, normalization (1NF-BCNF), ACID, transactions & indexing.</p>
                         <div class="progress">
                             <span style="width:62%"></span>
                         </div>
-                        <small>62% completed</small>
+                        <small>18+ Questions • Relational DB & SQL</small>
                     </div>
 
-                    <div class="module-card"
-                         onclick="startQuiz('technical')">
+                    <div class="module-card" data-category="core"
+                         onclick="startQuiz('os')">
                         <div class="module-icon">OS</div>
-                        <h3>Operating System</h3>
-                        <p>Processes, threads, memory and scheduling.</p>
+                        <h3>Operating Systems</h3>
+                        <p>CPU scheduling, deadlocks, paging, virtual memory & semaphores.</p>
                         <div class="progress">
                             <span style="width:59%"></span>
                         </div>
-                        <small>59% completed</small>
+                        <small>18+ Questions • OS Internals</small>
                     </div>
 
-                    <div class="module-card"
-                         onclick="startQuiz('technical')">
+                    <div class="module-card" data-category="core"
+                         onclick="startQuiz('cn')">
                         <div class="module-icon">CN</div>
                         <h3>Computer Networks</h3>
-                        <p>TCP/IP, OSI model, protocols and networking.</p>
+                        <p>OSI & TCP/IP models, subnetting, TCP handshake, DNS, HTTP & routing.</p>
                         <div class="progress">
                             <span style="width:55%"></span>
                         </div>
-                        <small>55% completed</small>
+                        <small>18+ Questions • Networking Protocols</small>
                     </div>
 
-                    <div class="module-card"
-                         onclick="startQuiz('technical')">
+                    <div class="module-card" data-category="algo"
+                         onclick="startQuiz('dsa')">
                         <div class="module-icon">DS</div>
-                        <h3>DSA</h3>
-                        <p>Arrays, linked lists, trees, graphs and algorithms.</p>
+                        <h3>Data Structures & Algorithms</h3>
+                        <p>Linked lists, trees, graphs, sorting, searching & Big-O complexities.</p>
                         <div class="progress">
                             <span style="width:68%"></span>
                         </div>
-                        <small>68% completed</small>
+                        <small>18+ Questions • Placement DSA</small>
                     </div>
 
-                    <div class="module-card"
-                         onclick="startQuiz('technical')">
+                    <div class="module-card" data-category="algo"
+                         onclick="startQuiz('oops')">
                         <div class="module-icon">OOP</div>
-                        <h3>OOP</h3>
-                        <p>Encapsulation, inheritance, abstraction and polymorphism.</p>
+                        <h3>Object-Oriented Programming</h3>
+                        <p>Encapsulation, inheritance, polymorphism, abstraction & SOLID principles.</p>
                         <div class="progress">
                             <span style="width:75%"></span>
                         </div>
-                        <small>75% completed</small>
+                        <small>15+ Questions • OOP Design</small>
+                    </div>
+
+                    <div class="module-card" data-category="pseudo"
+                         onclick="startQuiz('pseudocode')">
+                        <div class="module-icon">💻</div>
+                        <h3>Pseudocode & Logic Tracing</h3>
+                        <p>Bitwise operators, nested loop tracing, recursion & Accenture/Capgemini papers.</p>
+                        <div class="progress">
+                            <span style="width:65%"></span>
+                        </div>
+                        <small>18+ Questions • Crucial for Campus Drives</small>
+                    </div>
+
+                    <div class="module-card" data-category="company"
+                         onclick="startQuiz('company_tech')">
+                        <div class="module-icon">🏢</div>
+                        <h3>Company Technical Papers</h3>
+                        <p>TCS NQT Tech MCQs, Infosys Technical, Accenture Tech & AMCAT Programming.</p>
+                        <div class="progress">
+                            <span style="width:82%"></span>
+                        </div>
+                        <small>18+ Questions • Company Drives</small>
                     </div>
 
                 </div>
+
+                <div style="margin-top:25px"
+                     id="technicalQuizArea"></div>
 
             </section>
 
@@ -634,7 +690,25 @@ MAIN APP
                         <div class="problem-item"
                              onclick="selectProblem(4)">
                             <strong>5. Maximum Subarray</strong>
-                            <small>Medium • Dynamic Programming</small>
+                            <small>Medium • DP & Kadane</small>
+                        </div>
+
+                        <div class="problem-item"
+                             onclick="selectProblem(5)">
+                            <strong>6. Longest Substring</strong>
+                            <small>Medium • Sliding Window</small>
+                        </div>
+
+                        <div class="problem-item"
+                             onclick="selectProblem(6)">
+                            <strong>7. Detect Cycle</strong>
+                            <small>Easy • Two Pointers</small>
+                        </div>
+
+                        <div class="problem-item"
+                             onclick="selectProblem(7)">
+                            <strong>8. Palindrome Number</strong>
+                            <small>Easy • Math</small>
                         </div>
 
                     </div>
@@ -758,24 +832,54 @@ console.log(reverseString("hello"));</textarea>
 
                     <div class="module-grid">
 
-                        <div class="quick-card">
+                        <div class="quick-card" onclick="showInterview('OOP Concepts')">
                             <strong>OOP Concepts</strong>
                             <small>Inheritance, polymorphism, abstraction</small>
                         </div>
 
-                        <div class="quick-card">
-                            <strong>DBMS</strong>
-                            <small>SQL, normalization, transactions</small>
+                        <div class="quick-card" onclick="showInterview('DBMS')">
+                            <strong>DBMS & SQL</strong>
+                            <small>SQL joins, normalization, transactions</small>
                         </div>
 
-                        <div class="quick-card">
-                            <strong>Operating System</strong>
-                            <small>Processes, deadlocks, memory</small>
+                        <div class="quick-card" onclick="showInterview('Operating System')">
+                            <strong>Operating Systems</strong>
+                            <small>Processes, deadlocks, virtual memory</small>
                         </div>
 
-                        <div class="quick-card">
-                            <strong>DSA</strong>
-                            <small>Complexity, trees, graphs</small>
+                        <div class="quick-card" onclick="showInterview('DSA')">
+                            <strong>Data Structures</strong>
+                            <small>Complexity, trees, graphs & hashing</small>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="card" style="margin-top:20px">
+
+                    <h3>🏢 Company Interview Experiences</h3>
+
+                    <div class="module-grid">
+
+                        <div class="quick-card" onclick="showInterview('TCS Interview Experience')">
+                            <strong>TCS Ninja & Digital</strong>
+                            <small>Technical + MR + HR round questions</small>
+                        </div>
+
+                        <div class="quick-card" onclick="showInterview('Infosys Interview Experience')">
+                            <strong>Infosys Specialist & SE</strong>
+                            <small>Resume deep-dive & coding rounds</small>
+                        </div>
+
+                        <div class="quick-card" onclick="showInterview('Accenture Interview Experience')">
+                            <strong>Accenture ASE & FSE</strong>
+                            <small>Behavioral + Situational questions</small>
+                        </div>
+
+                        <div class="quick-card" onclick="showInterview('Wipro Interview Experience')">
+                            <strong>Wipro Elite NLTH</strong>
+                            <small>Programming fundamentals & HR round</small>
                         </div>
 
                     </div>
@@ -932,78 +1036,94 @@ Coding Practice Achievements</textarea>
 
                 <div class="card">
 
-                    <div class="timeline">
+                    <div class="timeline" id="roadmapTimeline">
 
                         <div class="timeline-item">
                             <div class="timeline-dot"></div>
-                            <h3>Phase 1 — Programming Fundamentals</h3>
-                            <p>
-                                Master C/C++/Java/Python fundamentals,
-                                variables, loops, functions, arrays and OOP.
-                            </p>
+                            <label class="roadmap-check-label">
+                                <input type="checkbox" id="roadmapCheck0" onchange="toggleRoadmapPhase(0)">
+                                <div>
+                                    <h3 id="roadmapTitle0">Phase 1 — Programming Fundamentals</h3>
+                                    <p>Master C/C++/Java/Python fundamentals, variables, loops, functions, arrays and OOP.</p>
+                                </div>
+                            </label>
                         </div>
 
                         <div class="timeline-item">
                             <div class="timeline-dot"></div>
-                            <h3>Phase 2 — Data Structures & Algorithms</h3>
-                            <p>
-                                Learn arrays, linked lists, stacks, queues,
-                                trees, graphs, sorting and searching.
-                            </p>
+                            <label class="roadmap-check-label">
+                                <input type="checkbox" id="roadmapCheck1" onchange="toggleRoadmapPhase(1)">
+                                <div>
+                                    <h3 id="roadmapTitle1">Phase 2 — Data Structures & Algorithms</h3>
+                                    <p>Learn arrays, linked lists, stacks, queues, trees, graphs, sorting and searching.</p>
+                                </div>
+                            </label>
                         </div>
 
                         <div class="timeline-item">
                             <div class="timeline-dot"></div>
-                            <h3>Phase 3 — Core CS Subjects</h3>
-                            <p>
-                                Prepare DBMS, Operating Systems,
-                                Computer Networks and OOP.
-                            </p>
+                            <label class="roadmap-check-label">
+                                <input type="checkbox" id="roadmapCheck2" onchange="toggleRoadmapPhase(2)">
+                                <div>
+                                    <h3 id="roadmapTitle2">Phase 3 — Core CS Subjects</h3>
+                                    <p>Prepare DBMS, Operating Systems, Computer Networks and Object-Oriented Design.</p>
+                                </div>
+                            </label>
                         </div>
 
                         <div class="timeline-item">
                             <div class="timeline-dot"></div>
-                            <h3>Phase 4 — Aptitude</h3>
-                            <p>
-                                Practice quantitative aptitude,
-                                logical reasoning and verbal ability.
-                            </p>
+                            <label class="roadmap-check-label">
+                                <input type="checkbox" id="roadmapCheck3" onchange="toggleRoadmapPhase(3)">
+                                <div>
+                                    <h3 id="roadmapTitle3">Phase 4 — Aptitude Practice</h3>
+                                    <p>Practice quantitative aptitude, logical reasoning and verbal ability speed-tests.</p>
+                                </div>
+                            </label>
                         </div>
 
                         <div class="timeline-item">
                             <div class="timeline-dot"></div>
-                            <h3>Phase 5 — Projects & Resume</h3>
-                            <p>
-                                Build real-world projects and prepare
-                                an ATS-friendly professional resume.
-                            </p>
+                            <label class="roadmap-check-label">
+                                <input type="checkbox" id="roadmapCheck4" onchange="toggleRoadmapPhase(4)">
+                                <div>
+                                    <h3 id="roadmapTitle4">Phase 5 — Projects & Resume Building</h3>
+                                    <p>Build real-world full-stack projects and generate an ATS-friendly professional resume.</p>
+                                </div>
+                            </label>
                         </div>
 
                         <div class="timeline-item">
                             <div class="timeline-dot"></div>
-                            <h3>Phase 6 — Mock Interviews</h3>
-                            <p>
-                                Practice HR and technical interviews,
-                                improve communication and confidence.
-                            </p>
+                            <label class="roadmap-check-label">
+                                <input type="checkbox" id="roadmapCheck5" onchange="toggleRoadmapPhase(5)">
+                                <div>
+                                    <h3 id="roadmapTitle5">Phase 6 — Mock Interviews & Behavioral Prep</h3>
+                                    <p>Practice HR and technical interview frameworks (STAR method) to build confidence.</p>
+                                </div>
+                            </label>
                         </div>
 
                         <div class="timeline-item">
                             <div class="timeline-dot"></div>
-                            <h3>Phase 7 — Company Preparation</h3>
-                            <p>
-                                Research companies and practice their
-                                aptitude, coding and interview patterns.
-                            </p>
+                            <label class="roadmap-check-label">
+                                <input type="checkbox" id="roadmapCheck6" onchange="toggleRoadmapPhase(6)">
+                                <div>
+                                    <h3 id="roadmapTitle6">Phase 7 — Company Specific Preparation</h3>
+                                    <p>Solve previous placement papers for TCS NQT, Infosys, Accenture, AMCAT & eLitmus.</p>
+                                </div>
+                            </label>
                         </div>
 
                         <div class="timeline-item">
                             <div class="timeline-dot"></div>
-                            <h3>🎯 Placement Ready</h3>
-                            <p>
-                                Apply, attend assessments and interviews,
-                                and convert your preparation into an offer.
-                            </p>
+                            <label class="roadmap-check-label">
+                                <input type="checkbox" id="roadmapCheck7" onchange="toggleRoadmapPhase(7)">
+                                <div>
+                                    <h3 id="roadmapTitle7">🎯 Placement Ready & On-Campus Drives</h3>
+                                    <p>Apply with confidence, ace written assessments and convert your interviews into offers!</p>
+                                </div>
+                            </label>
                         </div>
 
                     </div>
@@ -1022,7 +1142,7 @@ Coding Practice Achievements</textarea>
                 <div class="page-title">
                     <div>
                         <h1>Mock Tests 📝</h1>
-                        <p>Test yourself under real placement conditions.</p>
+                        <p>Timed placement assessments with instant score reports and answer review.</p>
                     </div>
                 </div>
 
@@ -1031,39 +1151,78 @@ Coding Practice Achievements</textarea>
                     <div class="module-card">
                         <div class="module-icon">🎯</div>
                         <h3>Full Placement Test</h3>
-                        <p>50 questions • 60 minutes</p>
+                        <p>40 questions • 45 minutes • Mixed Aptitude & Tech</p>
                         <div class="progress">
                             <span style="width:0%"></span>
                         </div>
                         <button class="primary-btn"
-                                onclick="startMockTest()">
+                                onclick="startMockTest('full')">
                             Start Test
                         </button>
                     </div>
 
                     <div class="module-card">
                         <div class="module-icon">🧮</div>
-                        <h3>Aptitude Test</h3>
-                        <p>25 questions • 30 minutes</p>
+                        <h3>Aptitude Assessment</h3>
+                        <p>25 questions • 30 minutes • Quantitative & Reasoning</p>
                         <div class="progress">
                             <span style="width:35%"></span>
                         </div>
-                        <button class="secondary-btn"
-                                onclick="startQuiz('aptitude')">
-                            Practice
+                        <button class="primary-btn"
+                                onclick="startMockTest('aptitude')">
+                            Start Test
                         </button>
                     </div>
 
                     <div class="module-card">
                         <div class="module-icon">💻</div>
-                        <h3>Technical Test</h3>
-                        <p>30 questions • 40 minutes</p>
+                        <h3>Technical Core Test</h3>
+                        <p>30 questions • 35 minutes • CS Subjects & Code</p>
                         <div class="progress">
                             <span style="width:55%"></span>
                         </div>
-                        <button class="secondary-btn"
-                                onclick="startQuiz('technical')">
-                            Practice
+                        <button class="primary-btn"
+                                onclick="startMockTest('technical')">
+                            Start Test
+                        </button>
+                    </div>
+
+                    <div class="module-card">
+                        <div class="module-icon">🏢</div>
+                        <h3>TCS NQT Simulation</h3>
+                        <p>30 questions • 35 minutes • Numerical & Tech Logic</p>
+                        <div class="progress">
+                            <span style="width:25%"></span>
+                        </div>
+                        <button class="primary-btn"
+                                onclick="startMockTest('tcs')">
+                            Start Test
+                        </button>
+                    </div>
+
+                    <div class="module-card">
+                        <div class="module-icon">🧩</div>
+                        <h3>Infosys Assessment Mock</h3>
+                        <p>25 questions • 30 minutes • Cryptarithmetic & Logic</p>
+                        <div class="progress">
+                            <span style="width:40%"></span>
+                        </div>
+                        <button class="primary-btn"
+                                onclick="startMockTest('infosys')">
+                            Start Test
+                        </button>
+                    </div>
+
+                    <div class="module-card">
+                        <div class="module-icon">⚡</div>
+                        <h3>Accenture Cognitive & Tech</h3>
+                        <p>25 questions • 30 minutes • Pseudocode & Reasoning</p>
+                        <div class="progress">
+                            <span style="width:60%"></span>
+                        </div>
+                        <button class="primary-btn"
+                                onclick="startMockTest('accenture')">
+                            Start Test
                         </button>
                     </div>
 
